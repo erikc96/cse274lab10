@@ -11,7 +11,26 @@ public class BinarySearchTree {
 	 * Adds the specified node to the BST
 	 */
 	public String add(String value) {
+		if(root == null) {
+			root = new Node(value);
+			return value;
+		}
+		add(root, value);
+	}
+	
+	private String add(Node root, String value) {
+		int comparison = value.compareTo(root.data);
+		if(comparison == value.compareTo(root.data)) return value;
 		
+		if(comparison < 0) {
+			if(root.left != null)  add(root.left, value);
+			root.left = new Node(value);
+			return value;
+		}else {
+			if(root.right != null)  add(root.right, value);
+			root.right = new Node(value);
+		}
+		return value;
 	}
 	
 	/*
