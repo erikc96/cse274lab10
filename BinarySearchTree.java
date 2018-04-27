@@ -15,21 +15,21 @@ public class BinarySearchTree {
 			root = new Node(value);
 			return value;
 		}
-		add(root, value);
+		return add(root, value);
 	}
 	
 	private String add(Node root, String value) {
 		int comparison = value.compareTo(root.data);
-		if(comparison == value.compareTo(root.data)) return value;
 		
 		if(comparison < 0) {
 			if(root.left != null)  add(root.left, value);
 			root.left = new Node(value);
 			return value;
-		}else {
+		}else if(comparison > 0){
 			if(root.right != null)  add(root.right, value);
 			root.right = new Node(value);
 		}
+		
 		return value;
 	}
 	
@@ -37,14 +37,29 @@ public class BinarySearchTree {
 	 * Returns true if the string is found in the BST
 	 */
 	public boolean contains(String value) {
-
+		return contains(root, value);
+	}
+	
+	private boolean contains(Node r, String value) {
+		if(root == null)return false;
+		int comparison = value.compareTo(root.data);
+		
+		if(comparison < 0) {
+				return contains(r.left, value);
+		}else if(comparison > 0) {
+			return contains(r.left, value);
+		}else if(comparison == 0){
+			return true;
+		}
+		
+		return false;
 	}
 	
 	/*
 	 * Checks whether the tree is empty or not
 	 */
 	public boolean isEmpty() {
-
+		return (root == null);
 	}
 	
 	/*
