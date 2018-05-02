@@ -59,12 +59,14 @@ public class JUnitBinarySearchTree {
 			// Get rid of duplicates in the arraylist
 			while (words.contains(s))
 				words.remove(s);
-			
 			bst.remove(s);
 			assertFalse(bst.contains(s));
-			for (int i = 0; i < words.size(); i++) {
-				assertTrue(bst.contains(words.get(i)));
-			}
+
+		}
+
+		for (int i = 0; i < words.size(); i++) {
+			System.out.println(i);
+			assertTrue(bst.contains(words.get(i)));
 		}
 	}
 	

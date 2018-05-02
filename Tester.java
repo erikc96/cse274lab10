@@ -5,20 +5,16 @@ public class Tester {
 		
 		BinarySearchTree bst = new BinarySearchTree();
 		
-		bst.add("house");
-		bst.add("mouse");
-		bst.add("cat");
-		bst.add("dog");
-		bst.add("cob");
-		bst.add("egg");
+		bst.add("a");
+		bst.add("c");
+		bst.add("b");
+		bst.add("d");
 
 		bst.inorderTraversal();
-		bst.remove("house");
+		System.out.println();
+		bst.remove("c");
 		bst.inorderTraversal();
-		bst.remove("mouse");
-		bst.inorderTraversal();
-		bst.remove("aa");
-		bst.inorderTraversal();
+		System.out.println();
 		
 	}
 
